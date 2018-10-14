@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
     end
 
     def new
+        @article = Article.new
     end
     
     def create
@@ -16,6 +17,9 @@ class ArticlesController < ApplicationController
 
         @article.save
         redirect_to @article
+        else
+            render 'new'
+        end
     end
     private
         def article_params

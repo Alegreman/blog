@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     end
 
     def edit
-        @article = Article.find(pamars[:id])
+        @article = Article.find(params[:id])
     end
 
     
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
             render 'edit'
         end    
     end
-    
+
     private
         def article_params
             params.require(:article).permit(:title, :text)
